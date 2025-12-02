@@ -1,785 +1,876 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javier Egea Terry - AI Integration Strategist | Portfolio B2B</title>
+    <title>Reactivación de Clientes | Integrador de IA & Estratega de Emails</title>
+    <meta name="description" content="Reactivamos tu base de clientes dormidos y generamos ventas. Tú no pagas nada → solo comisión por ventas.">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'cosmic': {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                            950: '#082f49',
-                        },
-                        'neon': {
-                            cyan: '#22d3ee',
-                            blue: '#3b82f6',
-                            purple: '#8b5cf6',
-                            pink: '#ec4899',
-                            indigo: '#6366f1',
-                        },
-                        'deep-space': '#0a0e27',
-                        'space-blue': '#1a1f3a',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    animation: {
-                        'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'slide-up': 'slide-up 0.5s ease-out',
-                        'fade-in': 'fade-in 0.6s ease-out',
-                    },
-                    keyframes: {
-                        'glow-pulse': {
-                            '0%, 100%': {
-                                boxShadow: '0 0 20px rgba(14, 165, 233, 0.3), 0 0 40px rgba(139, 92, 246, 0.2)',
-                                transform: 'scale(1)'
-                            },
-                            '50%': {
-                                boxShadow: '0 0 30px rgba(14, 165, 233, 0.5), 0 0 60px rgba(139, 92, 246, 0.3)',
-                                transform: 'scale(1.02)'
-                            },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0px) translateX(0px)' },
-                            '33%': { transform: 'translateY(-20px) translateX(10px)' },
-                            '66%': { transform: 'translateY(-10px) translateX(-10px)' },
-                        },
-                        'slide-up': {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        'fade-in': {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                    },
-                    backdropBlur: {
-                        xs: '2px',
-                    },
-                },
-            },
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #0a0e27 50%, #1a1f3a 75%, #0a0e27 100%);
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             background-attachment: fixed;
-            background-size: 400% 400%;
         }
 
-        .gradient-text {
-            background: linear-gradient(90deg, #0ea5e9 0%, #8b5cf6 50%, #ec4899 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
+        /* Animated Gradient Background */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
         }
 
-        .gradient-border {
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        /* Neon Glow Effects */
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5),
+                        0 0 40px rgba(118, 75, 162, 0.3),
+                        0 0 60px rgba(240, 147, 251, 0.2);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 10px rgba(102, 126, 234, 0.8),
+                         0 0 20px rgba(118, 75, 162, 0.6),
+                         0 0 30px rgba(240, 147, 251, 0.4);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Button Styles */
+        .btn-cosmic {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
             position: relative;
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(139, 92, 246, 0.1));
-            border: 1px solid transparent;
-            background-clip: padding-box;
+            overflow: hidden;
         }
 
-        .gradient-border::before {
+        .btn-cosmic::before {
             content: '';
             position: absolute;
             top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-cosmic:hover::before {
+            left: 100%;
+        }
+
+        .btn-cosmic:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
+        .btn-whatsapp:hover {
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-phone {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .btn-phone:hover {
+            box-shadow: 0 15px 35px rgba(245, 87, 108, 0.5);
+        }
+
+        /* Card Hover Effects */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(118, 75, 162, 0.8); }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* Star Field Background */
+        .stars {
+            position: fixed;
+            top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(135deg, #0ea5e9, #8b5cf6, #ec4899);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
+            z-index: 0;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
         }
 
-        .glass-card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .glass-card-hover:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(14, 165, 233, 0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px 0 rgba(14, 165, 233, 0.3);
-        }
-
-        .neon-glow {
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4), 0 0 40px rgba(139, 92, 246, 0.2);
-        }
-
-        .neon-glow-strong {
-            box-shadow: 0 0 30px rgba(14, 165, 233, 0.6), 0 0 60px rgba(139, 92, 246, 0.4), 0 0 90px rgba(236, 72, 153, 0.2);
-        }
-
-        @keyframes pulse-ring {
-            0% {
-                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 20px rgba(14, 165, 233, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
-            }
-        }
-
-        .pulse-ring {
-            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
         }
     </style>
+
+    <script>
+        // Generate random stars
+        document.addEventListener('DOMContentLoaded', function() {
+            const starsContainer = document.createElement('div');
+            starsContainer.className = 'stars';
+            document.body.appendChild(starsContainer);
+
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        });
+    </script>
 </head>
-<body class="text-white antialiased">
+<body class="text-white">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 z-50 w-full border-b border-white/5 backdrop-blur-md">
-        <div class="glass-card border-x-0 border-t-0">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex h-16 items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <div class="h-2 w-2 animate-pulse rounded-full bg-neon-cyan"></div>
-                        <span class="text-lg font-bold gradient-text">JET • AI Strategist</span>
-                    </div>
+    <!-- HERO SECTION -->
+    <section class="relative hero-gradient py-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center">
+        <!-- Cosmic Pattern Overlay -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 50px 50px;"></div>
+        </div>
 
-                    <div class="hidden items-center gap-8 md:flex">
-                        <a href="#desafio" class="text-sm font-medium text-gray-300 transition-colors hover:text-neon-cyan">El Desafío</a>
-                        <a href="#pilares" class="text-sm font-medium text-gray-300 transition-colors hover:text-neon-cyan">Áreas de Impacto</a>
-                        <a href="#perfil" class="text-sm font-medium text-gray-300 transition-colors hover:text-neon-cyan">Mi Perfil</a>
-                        <a href="#contacto" class="text-sm font-medium text-gray-300 transition-colors hover:text-neon-cyan">Contacto</a>
-                    </div>
+        <div class="relative max-w-6xl mx-auto text-center z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 glass rounded-full px-6 py-3 mb-8 neon-glow">
+                <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
+                <span class="text-sm font-bold tracking-wider">100% SIN RIESGO • SOLO COMISIÓN POR VENTAS</span>
+            </div>
 
-                    <a href="#contacto" class="group relative overflow-hidden rounded-full bg-gradient-to-r from-cosmic-500 to-neon-purple px-6 py-2 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-cosmic-500/50">
-                        <span class="relative z-10">Hablemos</span>
-                        <div class="absolute inset-0 -z-0 bg-gradient-to-r from-neon-purple to-neon-pink opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                    </a>
+            <!-- Main Headline -->
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-8 leading-tight neon-text">
+                Reactivamos Tu Base de Clientes<br>
+                y <span class="text-yellow-300">Generamos Ventas</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-2xl sm:text-3xl font-bold mb-6 text-purple-200">
+                Tú No Pagas Nada → Solo Comisión por Ventas
+            </p>
+
+            <p class="text-lg sm:text-xl mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Si tienes clientes antiguos que no compran hace meses, tienes dinero "dormido".
+                <br class="hidden sm:block">
+                <strong>Nosotros lo despertamos con estrategia de emails e inteligencia artificial.</strong>
+            </p>
+
+            <!-- CTA Buttons Row 1 -->
+            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mb-6">
+                <a href="mailto:contact@javier-egea.com?subject=Quiero%20Generar%20Ventas%20Sin%20Riesgo"
+                   class="btn-cosmic text-white font-bold py-6 px-10 rounded-2xl text-lg inline-flex items-center gap-3 shadow-2xl">
+                    <i class="fas fa-envelope text-2xl"></i>
+                    Enviar Email Ahora
+                </a>
+
+                <a href="tel:+34614405061"
+                   class="btn-phone text-white font-bold py-6 px-10 rounded-2xl text-lg inline-flex items-center gap-3 shadow-2xl">
+                    <i class="fas fa-phone-alt text-2xl"></i>
+                    Llamar: +34 614 40 50 61
+                </a>
+            </div>
+
+            <!-- CTA Buttons Row 2 -->
+            <div class="flex justify-center">
+                <a href="https://wa.me/34614405061?text=Hola,%20quiero%20información%20sobre%20reactivación%20de%20clientes"
+                   target="_blank"
+                   class="btn-whatsapp text-white font-bold py-6 px-10 rounded-2xl text-lg inline-flex items-center gap-3 shadow-2xl">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    Escribir por WhatsApp
+                </a>
+            </div>
+
+            <!-- Trust Badge -->
+            <div class="mt-12 text-base text-white/90 glass inline-block px-6 py-3 rounded-full">
+                <i class="fas fa-shield-alt mr-2"></i>
+                Sin compromiso • Sin contrato largo • Tú controlas todo
+            </div>
+
+            <!-- Positioning Badge -->
+            <div class="mt-8">
+                <div class="inline-block glass-strong text-gray-900 px-8 py-4 rounded-2xl">
+                    <p class="font-black text-lg">
+                        <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            Integrador de IA
+                        </span>
+                        <span class="mx-2">•</span>
+                        <span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                            Estratega de Emails Experto
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen overflow-hidden px-4 pt-24 pb-20 sm:px-6 lg:px-8">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 overflow-hidden opacity-30">
-            <div class="absolute top-20 left-10 h-96 w-96 animate-float rounded-full bg-cosmic-500 mix-blend-multiply blur-3xl filter"></div>
-            <div class="absolute top-40 right-10 h-96 w-96 animate-float rounded-full bg-neon-purple mix-blend-multiply blur-3xl filter" style="animation-delay: 2s;"></div>
-            <div class="absolute bottom-20 left-1/2 h-96 w-96 animate-float rounded-full bg-neon-pink mix-blend-multiply blur-3xl filter" style="animation-delay: 4s;"></div>
-        </div>
+        <!-- Floating Decorative Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-purple-500 rounded-full opacity-20 blur-3xl float"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-pink-500 rounded-full opacity-20 blur-3xl float" style="animation-delay: 2s;"></div>
+    </section>
 
-        <div class="relative z-10 mx-auto max-w-7xl">
-            <div class="mx-auto max-w-5xl text-center">
-                <!-- Badge -->
-                <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-neon-cyan/20 bg-neon-cyan/10 px-4 py-2 backdrop-blur-sm">
-                    <div class="h-2 w-2 animate-pulse rounded-full bg-neon-cyan"></div>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-neon-cyan">
-                        Ex-fundador de 2 Startups de IA • 100% Integración Estratégica B2B
-                    </span>
+    <!-- SOCIAL PROOF / AUTHORITY -->
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-strong rounded-3xl p-10 sm:p-14 border-2 border-purple-300 neon-glow">
+                <div class="text-center mb-10">
+                    <i class="fas fa-lightbulb text-6xl mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent"></i>
+                    <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-6">
+                        La Oportunidad Que Estás Perdiendo
+                    </h2>
                 </div>
 
-                <!-- Main Headline -->
-                <h1 class="mb-6 text-5xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
-                    La Clave de Hoy: No es tener IA, es saber cómo
-                    <span class="gradient-text block mt-2">Implementarla en su Negocio</span>
-                </h1>
-
-                <!-- Sub-headline -->
-                <p class="mx-auto mb-12 max-w-3xl text-xl leading-relaxed text-gray-300 md:text-2xl">
-                    <span class="font-semibold text-neon-cyan">Javier Egea Terry:</span> Su Estratega.
-                    Convierto la Inteligencia Artificial más Avanzada (Sora, GPT, Kling) en
-                    <span class="font-semibold text-neon-purple">Resultados Diarios</span> para sus Operaciones.
-                </p>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                    <a href="#contacto" class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-cosmic-500 to-neon-purple px-8 py-4 text-lg font-bold text-white shadow-lg shadow-cosmic-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cosmic-500/60 neon-glow">
-                        <span class="relative z-10">Optimice su Utilización</span>
-                        <svg class="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                        </svg>
-                        <div class="absolute inset-0 -z-0 bg-gradient-to-r from-neon-purple to-neon-pink opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                    </a>
-
-                    <a href="#pilares" class="glass-card inline-flex items-center gap-2 rounded-full px-8 py-4 text-lg font-bold text-white transition-all duration-300 hover:border-cosmic-500/50 hover:bg-white/10">
-                        Ver Casos de Estudio
-                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <p class="mt-8 text-sm text-neon-cyan">
-                    ➡️ Agende un Análisis de ROI de 15 Minutos
-                </p>
-            </div>
-
-            <!-- Stats Cards -->
-            <div class="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <div class="glass-card rounded-2xl p-6 text-center transition-all duration-300 hover:border-cosmic-500/30">
-                    <div class="mb-2 text-3xl font-bold gradient-text">90%</div>
-                    <div class="text-sm text-gray-400">Reducción de Tiempo</div>
-                </div>
-                <div class="glass-card rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon-purple/30">
-                    <div class="mb-2 text-3xl font-bold gradient-text">95%</div>
-                    <div class="text-sm text-gray-400">Precisión Predictiva</div>
-                </div>
-                <div class="glass-card rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon-pink/30">
-                    <div class="mb-2 text-3xl font-bold gradient-text">24/7</div>
-                    <div class="text-sm text-gray-400">Agentes Activos</div>
-                </div>
-                <div class="glass-card rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon-cyan/30">
-                    <div class="mb-2 text-3xl font-bold gradient-text">ROI</div>
-                    <div class="text-sm text-gray-400">Medible y Rápido</div>
+                <div class="space-y-6 text-lg text-gray-800">
+                    <p class="leading-relaxed">
+                        <strong class="text-purple-700">Negocios con años de clientes tienen dinero "dormido" en su base de datos.</strong>
+                    </p>
+                    <p class="leading-relaxed">
+                        Estudios demuestran que <strong class="text-purple-600">reactivar clientes antiguos es 5-25x más barato</strong> que conseguir nuevos clientes.
+                    </p>
+                    <p class="leading-relaxed">
+                        Con campañas de email bien ejecutadas, hemos visto retornos del <strong class="text-green-600">5-20% solo reactivando clientes antiguos</strong>.
+                    </p>
+                    <p class="leading-relaxed font-bold text-xl text-purple-700 mt-8">
+                        Si llevas tiempo en el mercado, tienes clientes que ya confiaron en ti.<br>
+                        Muchos volverían a comprar si alguien simplemente les escribiera bien.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- El Desafío Estratégico -->
-    <section id="desafio" class="px-4 py-20 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-6xl">
-            <div class="glass-card rounded-3xl p-8 neon-glow md:p-12">
-                <div class="mb-8 flex items-start gap-4">
-                    <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cosmic-500 to-neon-cyan text-3xl">
-                        💡
+    <!-- HOW IT WORKS (3 STEPS) -->
+    <section class="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl sm:text-6xl font-black text-white mb-6 neon-text">
+                    Cómo Funciona
+                </h2>
+                <p class="text-2xl text-purple-200">
+                    Simple, transparente, sin riesgo
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Step 1 -->
+                <div class="card-hover glass-strong rounded-3xl p-10 shadow-2xl border-t-4 border-purple-500">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-8 pulse-glow">
+                        <span class="text-4xl font-black text-white">1</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-5">
+                        Revisamos Tu Base de Datos
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Analizamos tu lista de clientes dormidos, identificamos oportunidades y segmentamos por potencial de compra usando IA.
+                    </p>
+                    <div class="flex items-center gap-3 text-purple-600 font-bold">
+                        <i class="fas fa-database text-xl"></i>
+                        <span>Análisis con IA gratuito</span>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="card-hover glass-strong rounded-3xl p-10 shadow-2xl border-t-4 border-pink-500">
+                    <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-700 rounded-2xl flex items-center justify-center mb-8 pulse-glow" style="animation-delay: 0.5s;">
+                        <span class="text-4xl font-black text-white">2</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-5">
+                        Creamos y Aprobáis los Emails
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Escribimos emails persuasivos con copywriting probado y adaptados a tu marca. <strong>Tú apruebas todo antes de enviar.</strong>
+                    </p>
+                    <div class="flex items-center gap-3 text-pink-600 font-bold">
+                        <i class="fas fa-check-circle text-xl"></i>
+                        <span>100% bajo tu control</span>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="card-hover glass-strong rounded-3xl p-10 shadow-2xl border-t-4 border-cyan-500">
+                    <div class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-2xl flex items-center justify-center mb-8 pulse-glow" style="animation-delay: 1s;">
+                        <span class="text-4xl font-black text-white">3</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-5">
+                        Reactivamos Ventas
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Ejecutamos la campaña, monitoreamos resultados en tiempo real, optimizamos. Tú recibes el dinero directamente de tus clientes.
+                    </p>
+                    <div class="flex items-center gap-3 text-cyan-600 font-bold">
+                        <i class="fas fa-chart-line text-xl"></i>
+                        <span>Resultados medibles</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA After Steps -->
+            <div class="text-center mt-16">
+                <a href="mailto:contact@javier-egea.com?subject=Quiero%20Información%20Sobre%20El%20Proceso"
+                   class="inline-block btn-cosmic text-white font-bold py-5 px-10 rounded-2xl text-lg shadow-2xl">
+                    <i class="fas fa-rocket mr-3"></i>
+                    Quiero Empezar Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE OFFER -->
+    <section class="relative py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl sm:text-6xl font-black mb-8 neon-text">
+                    La Oferta Sin Riesgo
+                </h2>
+                <p class="text-3xl font-bold text-purple-300">
+                    Solo Pagas Si Generamos Ventas
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- What You Get -->
+                <div class="glass rounded-3xl p-10 border border-purple-400">
+                    <h3 class="text-3xl font-black mb-8 flex items-center gap-4">
+                        <i class="fas fa-gift text-yellow-300 text-4xl"></i>
+                        Lo Que Recibes
+                    </h3>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check-circle text-green-400 text-2xl mt-1"></i>
+                            <span class="text-lg">Análisis completo de tu base de datos con IA</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check-circle text-green-400 text-2xl mt-1"></i>
+                            <span class="text-lg">Estrategia de reactivación personalizada</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check-circle text-green-400 text-2xl mt-1"></i>
+                            <span class="text-lg">Copywriting persuasivo de emails probado</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check-circle text-green-400 text-2xl mt-1"></i>
+                            <span class="text-lg">Ejecución completa de campaña</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check-circle text-green-400 text-2xl mt-1"></i>
+                            <span class="text-lg">Seguimiento y optimización continua</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check-circle text-green-400 text-2xl mt-1"></i>
+                            <span class="text-lg">Dashboard en tiempo real de resultados</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- What You Pay -->
+                <div class="bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 text-gray-900 rounded-3xl p-10 shadow-2xl neon-glow">
+                    <h3 class="text-3xl font-black mb-8 flex items-center gap-4">
+                        <i class="fas fa-hand-holding-usd text-4xl"></i>
+                        Lo Que Pagas
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="text-7xl font-black mb-6">
+                            0€
+                        </div>
+                        <p class="text-2xl font-black">
+                            Por adelantado
+                        </p>
+                        <div class="border-t-4 border-gray-900 my-8"></div>
+                        <div class="space-y-5">
+                            <p class="text-xl font-bold flex items-start gap-3">
+                                <i class="fas fa-arrow-right mt-1"></i>
+                                <span>Solo pagas un <strong>porcentaje de las ventas generadas</strong></span>
+                            </p>
+                            <p class="text-xl font-bold flex items-start gap-3">
+                                <i class="fas fa-arrow-right mt-1"></i>
+                                <span>Si no vendemos, <strong>no me pagas nada</strong></span>
+                            </p>
+                            <p class="text-xl font-bold flex items-start gap-3">
+                                <i class="fas fa-arrow-right mt-1"></i>
+                                <span>Tú recibes todo el dinero <strong>directamente</strong></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-16 space-y-6">
+                <a href="mailto:contact@javier-egea.com?subject=Quiero%20Empezar%20Mi%20Campaña%20de%20Reactivación"
+                   class="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-black py-7 px-14 rounded-2xl text-2xl hover:scale-105 transition-all shadow-2xl">
+                    <i class="fas fa-bolt mr-3"></i>
+                    Sí, Quiero Generar Ventas Sin Riesgo
+                </a>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="tel:+34614405061"
+                       class="btn-phone text-white font-bold py-5 px-10 rounded-xl text-lg inline-flex items-center gap-3 shadow-xl">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                        Llamar Ahora
+                    </a>
+                    <a href="https://wa.me/34614405061?text=Hola,%20quiero%20empezar%20mi%20campaña"
+                       target="_blank"
+                       class="btn-whatsapp text-white font-bold py-5 px-10 rounded-xl text-lg inline-flex items-center gap-3 shadow-xl">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL -->
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-green-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-strong border-4 border-green-400 rounded-3xl p-10 sm:p-14 neon-glow">
+                <div class="text-center mb-12">
+                    <i class="fas fa-shield-alt text-7xl text-green-600 mb-6 inline-block"></i>
+                    <h2 class="text-4xl sm:text-5xl font-black text-gray-900 mb-6">
+                        Cero Riesgo, Control Total
+                    </h2>
+                    <p class="text-2xl text-gray-700 font-semibold">
+                        Tú mantienes el control en cada paso
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <div class="flex items-start gap-5">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-check text-green-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-black text-xl text-gray-900 mb-2">Apruebas Todos los Emails</h3>
+                            <p class="text-gray-700 text-lg">Nada se envía sin tu OK final</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-5">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-check text-green-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-black text-xl text-gray-900 mb-2">Recibes Todo el Dinero</h3>
+                            <p class="text-gray-700 text-lg">Directamente de tus clientes</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-5">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-check text-green-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-black text-xl text-gray-900 mb-2">Yo Cobro Después</h3>
+                            <p class="text-gray-700 text-lg">Solo después de ventas confirmadas</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-5">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-check text-green-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-black text-xl text-gray-900 mb-2">Sin Compromiso Largo</h3>
+                            <p class="text-gray-700 text-lg">Sin contrato de permanencia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONVICTION STATEMENT -->
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-strong rounded-3xl p-10 sm:p-14 shadow-2xl border-l-8 border-purple-600">
+                <div class="flex items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-quote-left text-5xl text-purple-600"></i>
                     </div>
                     <div>
-                        <h2 class="text-3xl font-bold gradient-text md:text-4xl lg:text-5xl">
-                            La Distancia entre la Tecnología y el Beneficio
-                        </h2>
-                    </div>
-                </div>
-
-                <div class="space-y-6 text-lg leading-relaxed text-gray-300">
-                    <p>
-                        Como señaló <span class="font-semibold text-neon-cyan">Mark Cuban</span>, la Inteligencia Artificial
-                        <span class="font-semibold text-neon-purple">"supera a todas las evoluciones tecnológicas anteriores"</span>.
-                        Sin embargo, la gran mayoría de las Pequeñas y Medianas Empresas (PyMEs) y los negocios en crecimiento enfrentan el mismo desafío:
-                    </p>
-
-                    <div class="rounded-2xl border border-cosmic-500/30 bg-deep-space/50 p-8 backdrop-blur-sm">
-                        <p class="text-xl font-semibold text-white">
-                            La IA existe y funciona, pero nadie sabe cómo conectarla a sus sistemas críticos.
+                        <p class="text-2xl sm:text-3xl text-gray-800 leading-relaxed font-semibold mb-8">
+                            Tengo la convicción de que puedo aportarte valor con esto, porque negocios como el tuyo
+                            suelen tener un <strong class="text-purple-600">gran potencial sin explotar</strong> en su base de datos.
                         </p>
-                    </div>
-
-                    <!-- Problem Cards -->
-                    <div class="grid gap-6 pt-8 md:grid-cols-3">
-                        <div class="glass-card-hover glass-card group rounded-2xl p-6">
-                            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-neon-pink text-2xl">
-                                ❌
-                            </div>
-                            <h3 class="mb-3 text-lg font-bold text-neon-cyan">Software Desconectado</h3>
-                            <p class="text-sm text-gray-400">
-                                Millones de euros gastados en suscripciones de software que no se hablan entre sí.
-                            </p>
-                        </div>
-
-                        <div class="glass-card-hover glass-card group rounded-2xl p-6">
-                            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-yellow-500 text-2xl">
-                                ⏰
-                            </div>
-                            <h3 class="mb-3 text-lg font-bold text-neon-purple">Tiempo Perdido</h3>
-                            <p class="text-sm text-gray-400">
-                                Cientos de horas perdidas intentando entender e integrar herramientas.
-                            </p>
-                        </div>
-
-                        <div class="glass-card-hover glass-card group rounded-2xl p-6">
-                            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-neon-pink to-purple-500 text-2xl">
-                                🔗
-                            </div>
-                            <h3 class="mb-3 text-lg font-bold text-neon-pink">El Cuello de Botella</h3>
-                            <p class="text-sm text-gray-400">
-                                El 'código de unión' es el obstáculo que impide la transformación.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Solution Box -->
-                    <div class="mt-8 rounded-2xl bg-gradient-to-r from-cosmic-500/20 to-neon-purple/20 p-8 backdrop-blur-sm">
-                        <p class="text-xl font-semibold leading-relaxed text-white">
-                            Yo elimino ese obstáculo. Mi experiencia en la creación de empresas de IA me permite diseñar planes que
-                            solo utilizan herramientas gratuitas o de bajo coste para generar un
-                            <span class="gradient-text font-bold">Retorno de Inversión (ROI) claro y rápido.</span>
+                        <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                            No es magia. Es estrategia, copywriting persuasivo, automatización con IA y ejecución.
+                            <strong>Si ya tienes clientes que confiaron en ti, podemos hacerlos volver.</strong>
                         </p>
+                        <div class="pt-8 border-t-2 border-gray-300">
+                            <p class="font-black text-2xl text-gray-900">Javier Egea</p>
+                            <p class="text-purple-600 font-bold text-lg mt-2">Integrador de IA & Estratega de Emails Experto</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Los 4 Pilares -->
-    <section id="pilares" class="px-4 py-20 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-7xl">
-            <!-- Section Header -->
-            <div class="mb-16 text-center">
-                <div class="mb-4 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-cosmic-500 to-neon-purple text-4xl">
-                    📈
-                </div>
-                <h2 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
-                    Nuestras <span class="gradient-text">Áreas de Impacto</span>
+    <!-- FAQ SECTION -->
+    <section class="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl sm:text-6xl font-black text-white mb-6 neon-text">
+                    Preguntas Frecuentes
                 </h2>
-                <p class="mx-auto max-w-3xl text-xl text-gray-300">
-                    Solo implementamos soluciones enfocadas en las necesidades más urgentes de su negocio,
-                    siempre buscando la escalabilidad y la reducción directa de costes.
+                <p class="text-2xl text-purple-200">
+                    Resolvemos tus dudas
                 </p>
             </div>
 
-            <!-- Pillar Cards -->
-            <div class="grid gap-8 md:grid-cols-2">
-                <!-- Pilar 1 -->
-                <div class="glass-card-hover glass-card group rounded-3xl p-8 neon-glow">
-                    <div class="mb-6 flex items-start gap-4">
-                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cosmic-500 to-neon-cyan text-3xl transition-transform duration-300 group-hover:scale-110">
-                            🤖
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-neon-cyan">PILAR 01</span>
-                            <h3 class="mt-1 text-2xl font-bold text-white">Automatización Total de Ventas y Tareas</h3>
-                        </div>
-                    </div>
-                    <p class="mb-6 leading-relaxed text-gray-300">
-                        Integración de asistentes virtuales para hacer el trabajo de un comercial: búsqueda de clientes,
-                        cualificación de oportunidades y envío de emails.
-                        <span class="font-semibold text-neon-purple">Reducción del 90% del tiempo</span>
-                        en tareas administrativas repetitivas.
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="glass-strong rounded-2xl p-8 border-l-4 border-purple-500 card-hover">
+                    <h3 class="text-2xl font-black text-gray-900 mb-4 flex items-center gap-4">
+                        <i class="fas fa-question-circle text-purple-600 text-3xl"></i>
+                        ¿Qué pasa si no se generan ventas?
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed pl-14">
+                        <strong>No me pagas nada.</strong> Es así de simple. Solo cobro un porcentaje de las ventas que genero.
+                        Si no hay ventas, no hay pago. Cero riesgo para ti.
                     </p>
-                    <a href="#" class="inline-flex items-center gap-2 font-semibold text-neon-cyan transition-colors hover:text-cosmic-400">
-                        Ver Proyecto: Asistente de Ventas 24/7
-                        <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
                 </div>
 
-                <!-- Pilar 2 -->
-                <div class="glass-card-hover glass-card group rounded-3xl p-8 neon-glow">
-                    <div class="mb-6 flex items-start gap-4">
-                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-neon-purple to-neon-pink text-3xl transition-transform duration-300 group-hover:scale-110">
-                            🎨
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-neon-purple">PILAR 02</span>
-                            <h3 class="mt-1 text-2xl font-bold text-white">Contenido Ilimitado y Marketing a Escala</h3>
-                        </div>
-                    </div>
-                    <p class="mb-6 leading-relaxed text-gray-300">
-                        Creación de motores de contenido visual y escrito. Produzca vídeos, anuncios y copys de alta calidad de manera masiva,
-                        permitiendo que <span class="font-semibold text-neon-cyan">un equipo pequeño compita con grandes agencias</span>.
+                <!-- FAQ 2 -->
+                <div class="glass-strong rounded-2xl p-8 border-l-4 border-pink-500 card-hover">
+                    <h3 class="text-2xl font-black text-gray-900 mb-4 flex items-center gap-4">
+                        <i class="fas fa-question-circle text-pink-600 text-3xl"></i>
+                        ¿Quién escribe los emails?
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed pl-14">
+                        Yo escribo los emails con estrategia de copywriting persuasivo probado en múltiples campañas, pero <strong>tú apruebas todo antes de enviar.</strong>
+                        Los adapto a tu marca, tu tono y tus productos. Nada se envía sin tu visto bueno.
                     </p>
-                    <a href="#" class="inline-flex items-center gap-2 font-semibold text-neon-purple transition-colors hover:text-neon-pink">
-                        Ver Proyecto: Estudio de Contenido con IA
-                        <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
                 </div>
 
-                <!-- Pilar 3 -->
-                <div class="glass-card-hover glass-card group rounded-3xl p-8 neon-glow">
-                    <div class="mb-6 flex items-start gap-4">
-                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-neon-cyan to-cosmic-500 text-3xl transition-transform duration-300 group-hover:scale-110">
-                            📊
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-neon-cyan">PILAR 03</span>
-                            <h3 class="mt-1 text-2xl font-bold text-white">Decisiones Basadas en Datos (Predictivas)</h3>
-                        </div>
-                    </div>
-                    <p class="mb-6 leading-relaxed text-gray-300">
-                        Integramos la IA a sus sistemas de gestión (CRM/ERP) para predecir cuándo un cliente lo va a dejar,
-                        cuánto inventario debe pedir o cómo optimizar la cadena de suministro,
-                        alcanzando <span class="font-semibold text-neon-purple">precisiones superiores al 95%</span>.
+                <!-- FAQ 3 -->
+                <div class="glass-strong rounded-2xl p-8 border-l-4 border-cyan-500 card-hover">
+                    <h3 class="text-2xl font-black text-gray-900 mb-4 flex items-center gap-4">
+                        <i class="fas fa-question-circle text-cyan-600 text-3xl"></i>
+                        ¿Tocáis mis contactos o datos de clientes?
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed pl-14">
+                        Solo necesito acceso para configurar y ejecutar la campaña. <strong>Tus datos están seguros y protegidos.</strong>
+                        Trabajamos con total confidencialidad y nunca compartimos información de clientes.
+                        Tú mantienes el control total de tu base de datos en todo momento.
                     </p>
-                    <a href="#" class="inline-flex items-center gap-2 font-semibold text-neon-cyan transition-colors hover:text-cosmic-400">
-                        Ver Proyecto: Gestión Predictiva de Clientes
-                        <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
                 </div>
 
-                <!-- Pilar 4 -->
-                <div class="glass-card-hover glass-card group rounded-3xl p-8 neon-glow">
-                    <div class="mb-6 flex items-start gap-4">
-                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-neon-pink to-neon-purple text-3xl transition-transform duration-300 group-hover:scale-110">
-                            🎓
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-neon-pink">PILAR 04</span>
-                            <h3 class="mt-1 text-2xl font-bold text-white">Adopción Rápida y Conocimiento Interno</h3>
-                        </div>
-                    </div>
-                    <p class="mb-6 leading-relaxed text-gray-300">
-                        Desarrollamos asistentes de conocimiento que responden preguntas de su equipo usando solo los manuales,
-                        políticas y documentos de su empresa.
-                        <span class="font-semibold text-neon-cyan">Aseguramos que cada empleado use la IA de forma correcta</span>.
+                <!-- FAQ 4 -->
+                <div class="glass-strong rounded-2xl p-8 border-l-4 border-yellow-500 card-hover">
+                    <h3 class="text-2xl font-black text-gray-900 mb-4 flex items-center gap-4">
+                        <i class="fas fa-question-circle text-yellow-600 text-3xl"></i>
+                        ¿Cuánto porcentaje cobras?
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed pl-14">
+                        El porcentaje depende del volumen de tu base de datos, el ticket medio y el sector.
+                        Normalmente trabajamos con <strong>15-25% de las ventas generadas</strong> por la campaña.
+                        Lo definimos en una llamada después de revisar tu caso específico. Todo transparente.
                     </p>
-                    <a href="#" class="inline-flex items-center gap-2 font-semibold text-neon-pink transition-colors hover:text-neon-purple">
-                        Ver Proyecto: Asistente Interno de Formación
-                        <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="glass-strong rounded-2xl p-8 border-l-4 border-green-500 card-hover">
+                    <h3 class="text-2xl font-black text-gray-900 mb-4 flex items-center gap-4">
+                        <i class="fas fa-question-circle text-green-600 text-3xl"></i>
+                        ¿Qué necesito para empezar?
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed pl-14">
+                        Necesitas: <br>
+                        • Una base de datos de clientes antiguos<br>
+                        • Productos/servicios para venderles<br>
+                        • Una llamada breve para revisar tu caso<br><br>
+                        <strong>Si cumples con esto, podemos empezar rápidamente.</strong>
+                    </p>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="glass-strong rounded-2xl p-8 border-l-4 border-red-500 card-hover">
+                    <h3 class="text-2xl font-black text-gray-900 mb-4 flex items-center gap-4">
+                        <i class="fas fa-question-circle text-red-600 text-3xl"></i>
+                        ¿Cuánto tiempo dura una campaña?
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed pl-14">
+                        Una campaña típica incluye múltiples secuencias de emails optimizadas.
+                        Empezamos a ver resultados pronto y evaluamos continuamente para optimizar siguientes rondas.
+                    </p>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="glass-strong rounded-2xl p-8 border-l-4 border-indigo-500 card-hover">
+                    <h3 class="text-2xl font-black text-gray-900 mb-4 flex items-center gap-4">
+                        <i class="fas fa-question-circle text-indigo-600 text-3xl"></i>
+                        ¿Esto funciona para mi sector/industria?
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed pl-14">
+                        Si tienes una base de clientes antiguos y productos/servicios repetibles, <strong>sí funciona.</strong>
+                        Hemos visto éxito en e-commerce, servicios profesionales, B2B, formación, y más.
+                        En la llamada inicial evaluamos si tu caso es viable y diseñamos la estrategia específica.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mi Ventaja Humana (TVC) -->
-    <section id="perfil" class="px-4 py-20 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-6xl">
-            <div class="glass-card rounded-3xl p-8 neon-glow-strong md:p-12">
-                <!-- Header -->
-                <div class="mb-12 text-center">
-                    <div class="mb-4 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-cosmic-500 to-neon-purple text-4xl">
-                        🤝
-                    </div>
-                    <h2 class="mb-4 text-4xl font-bold md:text-5xl">
-                        <span class="gradient-text">Javier Egea Terry</span>
-                    </h2>
-                    <p class="text-2xl text-gray-300">Mi Ventaja Humana (El Moat TVC)</p>
-                </div>
+    <!-- FINAL CTA -->
+    <section class="relative py-24 px-4 sm:px-6 lg:px-8 hero-gradient">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl sm:text-6xl font-black mb-8 neon-text">
+                ¿Listo Para Reactivar Ventas?
+            </h2>
+            <p class="text-3xl font-bold mb-6 text-purple-100">
+                Programa una llamada gratuita
+            </p>
+            <p class="text-xl mb-12 text-white/90 max-w-2xl mx-auto leading-relaxed">
+                Revisamos tu base de datos, te digo si es viable y cómo podemos generar ventas.
+                Sin compromiso, sin presión. Solo una conversación honesta.
+            </p>
 
-                <!-- Intro Box -->
-                <div class="mb-12 rounded-2xl border border-cosmic-500/30 bg-deep-space/50 p-8 backdrop-blur-sm">
-                    <p class="text-xl leading-relaxed text-gray-300">
-                        La automatización reemplazará a los ejecutores. Pero el futuro pertenece a los <span class="font-semibold text-neon-cyan">Directores</span>.
-                        Mi valor profesional reside en las tres habilidades humanas que la IA no puede replicar.
-                        Este es su <span class="font-semibold text-neon-purple">seguro contra la obsolescencia</span>:
-                    </p>
-                </div>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+                <a href="mailto:contact@javier-egea.com?subject=Programar%20Llamada%20Gratuita%20-%20Reactivación"
+                   class="glass-strong text-purple-600 font-black py-7 px-12 rounded-2xl text-xl hover:scale-105 transition-all shadow-2xl inline-flex items-center gap-4 border-2 border-white">
+                    <i class="fas fa-envelope text-3xl"></i>
+                    Enviar Email
+                </a>
 
-                <!-- TVC Cards -->
-                <div class="mb-12 grid gap-6 md:grid-cols-3">
-                    <div class="glass-card-hover glass-card rounded-2xl p-8">
-                        <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-cosmic-500 to-neon-cyan text-4xl">
-                            👁️
-                        </div>
-                        <h3 class="mb-3 text-2xl font-bold text-neon-cyan">1. Gusto (Taste)</h3>
-                        <p class="text-gray-300">
-                            La IA crea infinitas opciones, pero no puede juzgar cuál es la correcta.
-                            Defino la estética, el timing y la relevancia para asegurar que su marca sobresalga.
-                        </p>
-                    </div>
+                <a href="tel:+34614405061"
+                   class="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-black py-7 px-12 rounded-2xl text-xl hover:scale-105 transition-all shadow-2xl inline-flex items-center gap-4">
+                    <i class="fas fa-phone-alt text-3xl"></i>
+                    Llamar Ahora
+                </a>
+            </div>
 
-                    <div class="glass-card-hover glass-card rounded-2xl p-8">
-                        <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-neon-purple to-neon-pink text-4xl">
-                            🔮
-                        </div>
-                        <h3 class="mb-3 text-2xl font-bold text-neon-purple">2. Visión (Vision)</h3>
-                        <p class="text-gray-300">
-                            Veo lo que aún no existe pero debería. Utilizo la IA como socio para llevar la imaginación estratégica
-                            a la realidad operativa de su empresa.
-                        </p>
-                    </div>
+            <div class="flex justify-center mb-10">
+                <a href="https://wa.me/34614405061?text=Hola,%20quiero%20programar%20una%20llamada%20sobre%20reactivación%20de%20clientes"
+                   target="_blank"
+                   class="btn-whatsapp text-white font-black py-7 px-12 rounded-2xl text-xl hover:scale-105 transition-all shadow-2xl inline-flex items-center gap-4">
+                    <i class="fab fa-whatsapp text-3xl"></i>
+                    Escribir por WhatsApp
+                </a>
+            </div>
 
-                    <div class="glass-card-hover glass-card rounded-2xl p-8">
-                        <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-neon-pink to-purple-500 text-4xl">
-                            ❤️
-                        </div>
-                        <h3 class="mb-3 text-2xl font-bold text-neon-pink">3. Cuidado (Care)</h3>
-                        <p class="text-gray-300">
-                            La IA piensa y ejecuta, pero no empatiza. Lidero la implementación con inteligencia emocional
-                            y foco en la gestión del cambio, la ética y el liderazgo efectivo.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Mission Statement -->
-                <div class="mb-12 rounded-2xl bg-gradient-to-r from-cosmic-500/20 to-neon-purple/20 p-8 backdrop-blur-sm">
-                    <p class="text-center text-xl font-semibold leading-relaxed text-white">
-                        Mi trabajo es <span class="gradient-text">dirigir la orquesta de agentes de IA</span>
-                        para que usted se enfoque en la visión de su negocio.
-                    </p>
-                </div>
-
-                <!-- Commitments -->
-                <div class="border-t border-gray-700 pt-12">
-                    <h3 class="mb-8 text-center text-2xl font-bold text-white">Mi Compromiso Profesional B2B</h3>
-                    <div class="grid gap-8 md:grid-cols-3">
-                        <div class="text-center">
-                            <div class="mb-3 flex justify-center">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cosmic-500 to-neon-cyan">
-                                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="mb-2 text-xl font-bold text-neon-cyan">Visión Empresarial</div>
-                            <p class="text-sm text-gray-400">Entiendo el diagnóstico del ROI y el Business Acumen.</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="mb-3 flex justify-center">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-neon-purple to-neon-pink">
-                                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="mb-2 text-xl font-bold text-neon-purple">Conexión Funcional</div>
-                            <p class="text-sm text-gray-400">Experto en hacer que los modelos avanzados funcionen con su infraestructura actual.</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="mb-3 flex justify-center">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-neon-pink to-purple-500">
-                                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="mb-2 text-xl font-bold text-neon-pink">Garantía de Inversión</div>
-                            <p class="text-sm text-gray-400">Solo proyectos con objetivos de beneficio medibles y comprobables.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="mt-12 text-base text-white/90 glass inline-block px-8 py-4 rounded-full">
+                <i class="fas fa-lock mr-2"></i>
+                Tus datos están seguros • Respuesta en menos de 24 horas
             </div>
         </div>
     </section>
 
-    <!-- Cita Mark Cuban -->
-    <section class="px-4 py-16 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-5xl">
-            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-cosmic-500/10 to-neon-purple/10 p-8 backdrop-blur-sm md:p-12">
-                <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-cosmic-500 via-neon-purple to-neon-pink"></div>
-                <div class="relative">
-                    <svg class="mb-4 h-12 w-12 text-neon-cyan opacity-50" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-3.3 0-6 2.7-6 6v10h8V14h-6c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h8V14h-6c0-2.2 1.8-4 4-4V8z"/>
-                    </svg>
-                    <p class="mb-6 text-2xl font-semibold italic leading-relaxed text-white md:text-3xl">
-                        Habrá integradores... aprendan sobre cómo implementarla en las empresas...
-                        ¿Quién lo va a hacer por ellos, en particular para las pequeñas y medianas empresas?
-                    </p>
-                    <p class="font-bold text-neon-cyan">— Mark Cuban</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cold Call / Propuesta de Valor -->
-    <section class="px-4 py-20 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-6xl">
-            <div class="glass-card rounded-3xl p-8 neon-glow md:p-12">
-                <div class="mb-12 text-center">
-                    <div class="mb-4 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-cosmic-500 to-neon-purple text-4xl">
-                        📞
-                    </div>
-                    <h2 class="mb-4 text-3xl font-bold gradient-text md:text-4xl">
-                        Nuestro Primer Contacto es Simple
-                    </h2>
-                </div>
-
-                <div class="grid gap-8 md:grid-cols-3">
-                    <div class="glass-card rounded-2xl p-8 text-center">
-                        <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-cosmic-500 to-neon-cyan text-2xl font-bold">
-                            1
-                        </div>
-                        <h3 class="mb-4 text-xl font-bold text-neon-cyan">Pregunta Clave</h3>
-                        <p class="text-gray-300">
-                            ¿Está usted explorando el uso de la IA para aumentar los ingresos y la eficiencia de su empresa?
-                        </p>
-                    </div>
-
-                    <div class="glass-card rounded-2xl p-8 text-center">
-                        <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-neon-purple to-neon-pink text-2xl font-bold">
-                            2
-                        </div>
-                        <h3 class="mb-4 text-xl font-bold text-neon-purple">Mi Compromiso</h3>
-                        <p class="text-gray-300">
-                            Le mostraré exactamente dónde están sus puntos de atención y conversión, y cómo un Agente de IA puede automatizar esa conversión.
-                        </p>
-                    </div>
-
-                    <div class="glass-card rounded-2xl p-8 text-center">
-                        <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-neon-pink to-cosmic-500 text-2xl font-bold">
-                            3
-                        </div>
-                        <h3 class="mb-4 text-xl font-bold text-neon-pink">El Resultado</h3>
-                        <p class="text-gray-300">
-                            Yo lo automatizo. Usted paga una cuota mensual por el mantenimiento. Usted gana eficiencia. Yo soy el socio que llama cada vez que necesita una ventaja.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section id="contacto" class="px-4 py-20 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-4xl text-center">
-            <div class="glass-card rounded-3xl p-12 neon-glow-strong">
-                <h2 class="mb-6 text-4xl font-bold md:text-5xl">
-                    La disrupción ya está aquí
+    <!-- AI SERVICES (SECONDARY) -->
+    <section class="relative py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-sm font-bold text-purple-400 mb-3 uppercase tracking-widest">Servicios Adicionales</p>
+                <h2 class="text-4xl sm:text-5xl font-black text-white mb-6 neon-text">
+                    Otros Servicios de Inteligencia Artificial
                 </h2>
-                <p class="mb-8 text-2xl text-gray-300">
-                    ¿Su empresa está <span class="font-semibold text-neon-pink">reaccionando</span>,
-                    o está implementando una <span class="font-semibold text-neon-cyan">ofensiva</span>?
+                <p class="text-xl text-purple-200 max-w-3xl mx-auto leading-relaxed">
+                    Como Integrador de IA independiente, ayudo a negocios a automatizar procesos,
+                    escalar operaciones y reducir costos usando tecnología de vanguardia
                 </p>
+            </div>
 
-                <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                    <a href="mailto:contacto@example.com" class="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-cosmic-500 to-neon-purple px-10 py-5 text-xl font-bold text-white shadow-2xl shadow-cosmic-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cosmic-500/70 neon-glow-strong">
-                        <span class="relative z-10">Hablemos de Implementación</span>
-                        <svg class="relative z-10 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                        <div class="absolute inset-0 -z-0 bg-gradient-to-r from-neon-purple to-neon-pink opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                    </a>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-strong rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all card-hover border border-purple-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-3">Sitios Web Optimizados para SEO</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Renovación o creación desde cero de sitios web optimizados para buscadores.
+                        Diseño moderno, rápido y enfocado en conversión.
+                    </p>
+                    <div class="text-sm text-purple-600 font-semibold">
+                        ✓ Responsive • ✓ SEO • ✓ Alta conversión
+                    </div>
                 </div>
 
-                <p class="mt-8 text-sm text-neon-cyan">
-                    Respuesta en menos de 24 horas • Consulta inicial sin compromiso
-                </p>
+                <!-- Service 2 -->
+                <div class="glass-strong rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all card-hover border border-blue-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-3">AEO (Answer Engine Optimization)</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Optimización para motores de respuesta de IA como ChatGPT, Perplexity y otros.
+                        Posiciona tu negocio en las respuestas de IA.
+                    </p>
+                    <div class="text-sm text-blue-600 font-semibold">
+                        ✓ ChatGPT • ✓ Perplexity • ✓ Claude
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-strong rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all card-hover border border-pink-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-3">Implementación de Agentes de IA</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Desarrollo e integración de agentes inteligentes personalizados para automatizar
+                        tareas repetitivas y liberar tiempo de tu equipo.
+                    </p>
+                    <div class="text-sm text-pink-600 font-semibold">
+                        ✓ Automatización • ✓ Personalizado • ✓ Escalable
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-strong rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all card-hover border border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-phone-volume text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-3">Agentes de Voz con IA 24/7</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Atención telefónica automatizada que nunca duerme. Responde llamadas,
+                        agenda citas y cualifica leads automáticamente.
+                    </p>
+                    <div class="text-sm text-green-600 font-semibold">
+                        ✓ 24/7 • ✓ Multiidioma • ✓ Natural
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="glass-strong rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all card-hover border border-indigo-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-share-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-3">Gestión de Redes Sociales con IA</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Automatización de contenido para redes sociales. Publicaciones programadas,
+                        copywriting optimizado y análisis de engagement.
+                    </p>
+                    <div class="text-sm text-indigo-600 font-semibold">
+                        ✓ Automatizado • ✓ Consistente • ✓ Engagement
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="glass-strong rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all card-hover border border-yellow-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-bar text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-3">Reporting y Análisis Automatizado</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Dashboards automáticos de métricas clave del negocio. Visualiza tus KPIs
+                        en tiempo real sin trabajo manual.
+                    </p>
+                    <div class="text-sm text-yellow-600 font-semibold">
+                        ✓ Tiempo real • ✓ Visual • ✓ Accionable
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-14">
+                <a href="mailto:contact@javier-egea.com?subject=Consulta%20sobre%20Servicios%20de%20IA"
+                   class="inline-block glass-strong text-purple-600 font-bold px-8 py-4 rounded-xl text-lg hover:scale-105 transition-all border-2 border-purple-400">
+                    Consultar sobre otros servicios <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/5 px-4 py-12 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-7xl">
-            <div class="mb-8 grid gap-8 md:grid-cols-3">
-                <div>
-                    <div class="mb-4 flex items-center gap-2">
-                        <div class="h-2 w-2 animate-pulse rounded-full bg-neon-cyan"></div>
-                        <h3 class="text-xl font-bold gradient-text">Javier Egea Terry</h3>
-                    </div>
-                    <p class="text-sm text-gray-400">
-                        AI Integration Strategist<br>
-                        Ex-fundador de 2 Startups de IA<br>
-                        Especializado en Integración B2B
+    <!-- FOOTER -->
+    <footer class="relative bg-gray-950 text-white py-16 px-4 sm:px-6 lg:px-8 border-t-2 border-purple-500">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center">
+                <h3 class="text-3xl font-black mb-3 neon-text">Javier Egea</h3>
+                <p class="text-purple-300 text-lg mb-8 font-semibold">
+                    Integrador de IA & Estratega de Emails Experto
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
+                    <a href="mailto:contact@javier-egea.com"
+                       class="text-purple-400 hover:text-purple-300 flex items-center gap-3 text-lg font-semibold transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                        contact@javier-egea.com
+                    </a>
+                    <span class="hidden sm:inline text-purple-600 text-2xl">•</span>
+                    <a href="tel:+34614405061"
+                       class="text-purple-400 hover:text-purple-300 flex items-center gap-3 text-lg font-semibold transition-colors">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                        +34 614 40 50 61
+                    </a>
+                    <span class="hidden sm:inline text-purple-600 text-2xl">•</span>
+                    <a href="https://wa.me/34614405061"
+                       target="_blank"
+                       class="text-green-400 hover:text-green-300 flex items-center gap-3 text-lg font-semibold transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        WhatsApp
+                    </a>
+                </div>
+
+                <div class="border-t border-purple-900 pt-8">
+                    <p class="text-purple-400 text-sm">
+                        © 2025 Javier Egea. Todos los derechos reservados.
                     </p>
                 </div>
-
-                <div>
-                    <h4 class="mb-4 text-lg font-semibold text-white">Áreas de Impacto</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2">
-                            <div class="h-1 w-1 rounded-full bg-neon-cyan"></div>
-                            Automatización de Ventas
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <div class="h-1 w-1 rounded-full bg-neon-purple"></div>
-                            Contenido y Marketing a Escala
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <div class="h-1 w-1 rounded-full bg-neon-pink"></div>
-                            Decisiones Predictivas
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <div class="h-1 w-1 rounded-full bg-cosmic-500"></div>
-                            Conocimiento Interno
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="mb-4 text-lg font-semibold text-white">Contacto</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2">
-                            <span>📧</span> contacto@example.com
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span>📱</span> LinkedIn
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span>🌐</span> Portfolio
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span>💼</span> Casos de Estudio
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-                <p>&copy; 2025 Javier Egea Terry - AI Integration Strategist. Todos los derechos reservados.</p>
-                <p class="mt-2 font-semibold text-neon-cyan">
-                    "No compre software; compre una ventaja competitiva."
-                </p>
             </div>
         </div>
     </footer>
-
-    <!-- Smooth Scroll Script -->
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach((section) => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(section);
-        });
-
-        // Parallax effect for background blobs
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const blobs = document.querySelectorAll('.animate-float');
-            blobs.forEach((blob, index) => {
-                const speed = 0.5 + (index * 0.1);
-                blob.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-    </script>
 
 </body>
 </html>
